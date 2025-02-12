@@ -61,13 +61,13 @@ void main()
 
 	initLCD();
 	instCtrl(0xC6); // move cursor to 2nd line 7th column
-	dataCtrl('H'); // prints ‘H’ at current cursor position
+	dataCtrl('H'); // prints â€˜Hâ€™ at current cursor position
 					// then shifts the cursor to the right*
-	dataCtrl('E'); // prints ‘E’
-	dataCtrl('L'); // prints ‘L’
-	dataCtrl('L'); // prints ‘L’
-	dataCtrl('O'); // prints ‘O’
-	dataCtrl('!'); // prints ‘!’
+	dataCtrl('E'); // prints â€˜Eâ€™
+	dataCtrl('L'); // prints â€˜Lâ€™
+	dataCtrl('L'); // prints â€˜Lâ€™
+	dataCtrl('O'); // prints â€˜Oâ€™
+	dataCtrl('!'); // prints â€˜!â€™
 
 	while(1){
 	}

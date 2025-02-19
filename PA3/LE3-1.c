@@ -18,7 +18,16 @@ void interrupt ISR(){
 	if (INTF){ // check the interrupt flag
 
 		INTF = 0; // clears the interrupt flag
-		if(PORTD)
+		if (PORTD >= 0x00 && PORTD <= 0x02) {
+			PORTC = PORTD + 1;
+		} else if(PORTD >= 0x04 && PORTD <= 0x06){
+			PORTC = PORTD;
+		}
+		else if (PORTD >= 0x08 && PORTD <= 0x0A) {
+		    PORTC = PORTD - 1;
+		}else if (PORTD = 0x0D) {
+		    PORTC = 0x00;
+		}else PORTC = 0x08;
 
 	}
 	 GIE = 1; // enable interrupts again
@@ -48,7 +57,8 @@ void main(){
  	INTF = 0; // clears the interrupt flag
 
  	GIE = 1; // enables all unmasked interrupt
-
+	
+	PORTC = 0x00;
 	while(1){
 	}
 }

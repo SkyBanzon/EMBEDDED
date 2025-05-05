@@ -11,10 +11,7 @@
 #pragma config WRT = OFF
 #pragma config CP = OFF
 
-
-int whole = 0;
-int decimal = 0;
-bit control = 0;
+	bit control = 0;
 
 // Simple delay
 void delay(int cnt) {
@@ -39,15 +36,19 @@ void main(void) {
     RC1 = 0;
     RC2 = 0;
 
+	
+	int whole = 0;
+	int decimal = 0;
+
     while(1) {
-        // Receive new data
+        //Receive new data
         while(!RCIF);            // Wait for 1st char (whole)
-        whole = RCREG & 0x0F;   
+        whole = RCREG & 0x0F;    
 
         while(!RCIF);            // Wait for 2nd char (decimal)
         decimal = RCREG & 0x0F;
 
-        // Display loop
+        // isplay loop
         while(1) {
             if (RCIF) break;     // Exit if new UART data arrives
 

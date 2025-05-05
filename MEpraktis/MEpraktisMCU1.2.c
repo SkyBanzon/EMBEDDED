@@ -122,7 +122,7 @@ void main() {
     while (1) {
         Dval = readADC();
 
-        // Convert ADC value to temperature (LM35: 10mV/°C)
+        // Convert ADC value to temperature (LM35: 10mV/Â°C)
         temp = (float)Dval * (5.0 / 1024.0) * 100.0;
 
         num1 = (int)temp;                   // Integer part (e.g., 26)

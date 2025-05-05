@@ -18,7 +18,7 @@ bit control = 0;
 
 // Simple delay
 void delay(int cnt) {
-    while(cnt--)
+    while(cnt--);
 }
 
 
@@ -40,14 +40,14 @@ void main(void) {
     RC2 = 0;
 
     while(1) {
-        // === Receive new data via UART ===
+        // Receive new data
         while(!RCIF);            // Wait for 1st char (whole)
-        whole = RCREG & 0x0F;    // Mask to 4 bits (0–9)
+        whole = RCREG & 0x0F;   
 
         while(!RCIF);            // Wait for 2nd char (decimal)
         decimal = RCREG & 0x0F;
 
-        // isplay loop
+        // Display loop
         while(1) {
             if (RCIF) break;     // Exit if new UART data arrives
 

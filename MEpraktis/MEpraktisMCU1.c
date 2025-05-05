@@ -1,4 +1,4 @@
-//AUTHOR: JAIME MANOLO C. CORTES
+
 #include <xc.h>
 
 #pragma config FOSC = XT
